@@ -153,18 +153,17 @@ the repo description now matches the blurb.
 - the website brief: `michaelbeardsley-now/docs/git-for-me.md` and queue item
   9 in its NEXT.md, uncommitted there as the other briefs are.
 
+Also done: the repo topics (Mike swapped `claude-code-plugin` into the 20),
+and WMH's companion line and its USAGE.md token command (`-e` takes every
+value after it, so the server name goes first), pushed to WMH as `7588d7e`.
+
 **Left:**
 
-6. A badge per marketplace as each goes live (flat, one color, linking to the
-   listing). The repo has GitHub's limit of 20 topics, set by Mike, without
-   `claude-code-plugin`: swap one out for it if he agrees.
-9. WMH's README calls Git for Me "the same for GitHub repos": change it to
-   GitHub, GitLab and Codeberg. And fix WMH's USAGE.md token command: in
-   `claude mcp add`, `-e` takes every value after it, so the server name must
-   come before `-e` (`... where-my-hug -e HF_TOKEN=hf_... -- npx ...`), as
-   Git for Me's USAGE.md now has it.
-10. When the website's page is live, set the repo's Website field to
-    `https://michaelbeardsley.now/projects/git-for-me/`.
+- A badge per marketplace as each listing goes live (flat, one color,
+  linking to the listing): Claude's plugin directory, awesome-copilot, Cline.
+- When the website's page is live, set the repo's Website field to
+  `https://michaelbeardsley.now/projects/git-for-me/`.
+- For WMH: port the list of searches per part (open question 5).
 
 ## Gotchas
 
