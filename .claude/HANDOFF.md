@@ -162,7 +162,8 @@ says "check them before building one".
    the `gemini-cli-extension` topic plus `gemini-extension.json`).
 5. Badges, in WMH's two rows: npm, Tests, MCP Registry, skills.sh, GitHub,
    then TypeScript, Node and license (read from npm once published), Buy Me a
-   Coffee and ALS research. Add one per marketplace as each listing goes
+   Coffee and ALS research. Tests, GitHub, TypeScript, the static Node and
+   license badges, and the two sponsorship ones are already in. Add one per marketplace as each listing goes
    live: flat, one color, linking to the listing.
 6. Repo topics for each new route (`claude-code-plugin`,
    `gemini-cli-extension`, `copilot-cli` and so on), as it ships.

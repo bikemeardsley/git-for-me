@@ -1,6 +1,7 @@
 <h1 align="center">Git for Me</h1>
 
 <p align="center">
+  <a href="https://github.com/bikemeardsley/git-for-me/actions/workflows/test.yml"><img src="https://github.com/bikemeardsley/git-for-me/actions/workflows/test.yml/badge.svg" alt="Tests"></a>
   <a href="https://github.com/search"><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" alt="GitHub"></a>
   <a href="#development"><img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript"></a>
   <a href="#development"><img src="https://img.shields.io/badge/node-%E2%89%A522.18-339933?logo=nodedotjs&logoColor=white" alt="Node 22.18 or later"></a>
