@@ -8,14 +8,17 @@
 <h1 align="center">Git for Me</h1>
 
 <p align="center">
+  <a href="https://www.npmjs.com/package/git-for-me"><img src="https://img.shields.io/npm/v/git-for-me?color=cb3837&logo=npm" alt="npm"></a>
   <a href="https://github.com/bikemeardsley/git-for-me/actions/workflows/test.yml"><img src="https://github.com/bikemeardsley/git-for-me/actions/workflows/test.yml/badge.svg" alt="Tests"></a>
+  <a href="https://registry.modelcontextprotocol.io/?q=git-for-me"><img src="https://img.shields.io/badge/MCP_Registry-111111?logo=modelcontextprotocol&logoColor=white" alt="In the official MCP Registry"></a>
+  <a href="https://skills.sh/bikemeardsley/git-for-me/git-for-me"><img src="https://img.shields.io/badge/skills.sh-111111" alt="On skills.sh"></a>
   <a href="https://github.com/search"><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" alt="GitHub"></a>
   <a href="https://gitlab.com/explore/projects"><img src="https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=white" alt="GitLab"></a>
   <a href="https://codeberg.org/explore/repos"><img src="https://img.shields.io/badge/Codeberg-2185D0?logo=codeberg&logoColor=white" alt="Codeberg"></a>
   <br>
   <a href="#development"><img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript"></a>
-  <a href="#install"><img src="https://img.shields.io/badge/node-%E2%89%A522.18-339933?logo=nodedotjs&logoColor=white" alt="Node 22.18 or later"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license"></a>
+  <a href="#install"><img src="https://img.shields.io/node/v/git-for-me?color=339933&logo=nodedotjs&logoColor=white" alt="Node 22.18 or later"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/npm/l/git-for-me?color=blue" alt="MIT license"></a>
   <a href="https://buymeacoffee.com/bikemeardsley"><img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?logo=buymeacoffee&logoColor=black" alt="Buy Me a Coffee"></a>
   <a href="https://www.als.net/donate/"><img src="https://img.shields.io/badge/Donate-ALS_Research-blueviolet" alt="Donate to ALS research"></a>
 </p>
@@ -31,9 +34,6 @@ client, or as an Agent Skill.
 
 Its companion, [Where My Hug At?](https://github.com/bikemeardsley/where-my-hug),
 does the same for Hugging Face models.
-
-> **Status: pre-release.** Not on npm yet: until it is, run it from a clone
-> (see [Development](#development)).
 
 <p align="center">
   <picture>

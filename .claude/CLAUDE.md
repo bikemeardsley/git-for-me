@@ -78,7 +78,7 @@ decisions made, the open questions, and the launch plan. Then
 - **General, not tied to any one project.**
 - `GITHUB_TOKEN` is read from the environment, sent only to `api.github.com`,
   and never recorded. GitLab and Codeberg are asked without a token.
-- Public on bikemeardsley/git-for-me (from day one; "pre-release" in the
-  README until launch), MIT. No CONTRIBUTING.md: issues and private security
+- Public on bikemeardsley/git-for-me and npm (`git-for-me`, 0.1.0 released
+  2026-10-14), MIT. No CONTRIBUTING.md: issues and private security
   advisories only.
 - Tests run offline: the forges are mocked.

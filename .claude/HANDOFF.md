@@ -126,35 +126,33 @@ found nothing that held up; north-mini-code-free (explorer) returned nothing
 
 ## Launch (in WMH's order)
 
-Mike's steps are marked **(Mike)**.
+**Done, 2026-10-14:** pushed; npm `git-for-me@0.1.0` (Mike ran `npm publish`:
+from a shell without a terminal, npm's one-time-password sign-in can't open,
+so he runs it himself); the plugin's launcher lock; tags `v0.1.0` and
+`git-for-me--v0.1.0` at `2bdac23` and the
+[v0.1.0 release](https://github.com/bikemeardsley/git-for-me/releases/tag/v0.1.0);
+the MCP Registry, `io.github.bikemeardsley/git-for-me` 0.1.0, active (Mike
+authorized `mcp-publisher login github` by device code, then it published);
+skills.sh (installed once into a scratch folder); the social preview (Mike);
+badges for npm, the MCP Registry and skills.sh, and "pre-release" dropped.
 
-0. **(Mike)** Approve commit and push of this session's work.
-1. **(Mike)** `npm publish` from a clean build (`build/` was rebuilt clean
-   this session): staged, approved on npmjs.com with a one-time password.
-2. In `plugin/`: `npm install --package-lock-only --ignore-scripts` once 0.1.0
-   is on npm (the launcher lock), commit.
-3. Tags `v0.1.0` and `git-for-me--v0.1.0`, then the GitHub release with notes.
-4. **(Mike)** `mcp-publisher login github` with
-   `P:\windsurf\thicken-3d-shape-generator\mcp-publisher.exe` (its login
-   expires within hours), then `mcp-publisher publish`.
+**Left** (Mike's steps marked **(Mike)**):
+
 5. Listings:
    - **(Mike)** the Claude plugin directory.
    - awesome-copilot: an issue form like WMH's #5061 (plugin path `plugin`,
-     ref `refs/tags/git-for-me--v0.1.0`, the tag's SHA, version 0.1.0, MIT;
-     comment `/rerun-intake` after edits).
+     ref `refs/tags/git-for-me--v0.1.0`, SHA
+     `2bdac23293f78745abb6f25ac39e90da9e736e9c`, version 0.1.0, MIT; comment
+     `/rerun-intake` after edits).
    - Cline marketplace: an issue like WMH's #2979 (repo URL, logo
      `https://raw.githubusercontent.com/bikemeardsley/git-for-me/main/.github/logo-400.png`,
      both checkboxes, and a paragraph on what it does).
-   - skills.sh: install once (`npx skills add bikemeardsley/git-for-me`).
    - Gemini gallery: automatic from the `gemini-cli-extension` topic plus
      `gemini-extension.json`.
-6. Badges in WMH's two rows (npm, MCP Registry, skills.sh; Node and license
-   read from npm), one per marketplace as each goes live. Repo topics for each
-   route (`claude-code-plugin`, `gemini-cli-extension`, `copilot-cli`, plus
-   `gitlab` and `codeberg`), and the repo description to match the blurb.
-7. **(Mike)** Upload `.github/social-preview.png` under Settings → Social
-   preview.
-8. Drop "pre-release" from the README.
+6. A badge per marketplace as each goes live (flat, one color, linking to the
+   listing). Repo topics for each route (`claude-code-plugin`,
+   `gemini-cli-extension`, `copilot-cli`, plus `gitlab` and `codeberg`), and
+   the repo description to match the blurb.
 9. WMH's README calls Git for Me "the same for GitHub repos": change it to
    GitHub, GitLab and Codeberg. And fix WMH's USAGE.md token command: in
    `claude mcp add`, `-e` takes every value after it, so the server name must
