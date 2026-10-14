@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="640" viewBox="0 0 1280 640">
+  <rect width="1280" height="640" fill="#ff6f59"/>
+  <image x="92" y="8" width="208" height="208" href="logo.svg" xlink:href="logo.svg"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" fill="#111">
+    <text x="352" y="84" font-size="72" font-weight="800" letter-spacing="-2">Git for Me</text>
+    <g font-size="22" fill="#2a0f0a">
+      <text x="356" y="122">Odds are, most of what you want to build is already open source.</text>
+      <text x="356" y="150">Tell your AI agent what you're making. It finds what exists:</text>
+      <text x="356" y="178">which repos to use as they are, which to adapt,</text>
+      <text x="356" y="206">and what's left for you to write.</text>
+    </g>
+  </g>
+  <rect x="64" y="226" width="1152" height="402" rx="18" fill="#eef8f5" transform="rotate(-0.6 640 427)"/>
+  <!-- flow.svg cropped to its content (it carries 40px margins of its own) -->
+  <svg x="148" y="234" width="984" height="386" viewBox="28 28 864 304">
+    <image width="920" height="360" href="flow.svg" xlink:href="flow.svg"/>
+  </svg>
+</svg>
