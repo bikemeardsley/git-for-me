@@ -134,36 +134,37 @@ so he runs it himself); the plugin's launcher lock; tags `v0.1.0` and
 the MCP Registry, `io.github.bikemeardsley/git-for-me` 0.1.0, active (Mike
 authorized `mcp-publisher login github` by device code, then it published);
 skills.sh (installed once into a scratch folder); the social preview (Mike);
-badges for npm, the MCP Registry and skills.sh, and "pre-release" dropped.
+badges for npm, the MCP Registry and skills.sh, and "pre-release" dropped;
+the repo description now matches the blurb.
 
-**Left** (Mike's steps marked **(Mike)**):
+**Submitted, pending review:**
 
-5. Listings:
-   - **(Mike)** the Claude plugin directory.
-   - awesome-copilot: an issue form like WMH's #5061 (plugin path `plugin`,
-     ref `refs/tags/git-for-me--v0.1.0`, SHA
-     `2bdac23293f78745abb6f25ac39e90da9e736e9c`, version 0.1.0, MIT; comment
-     `/rerun-intake` after edits).
-   - Cline marketplace: an issue like WMH's #2979 (repo URL, logo
-     `https://raw.githubusercontent.com/bikemeardsley/git-for-me/main/.github/logo-400.png`,
-     both checkboxes, and a paragraph on what it does).
-   - Gemini gallery: automatic from the `gemini-cli-extension` topic plus
-     `gemini-extension.json`.
+- the Claude plugin directory (Mike);
+- awesome-copilot [#5089](https://github.com/github/awesome-copilot/issues/5089):
+  intake passed (all gates), labeled `ready-for-review`. Filed with `gh`,
+  whose labels a non-maintainer can't set, so intake skipped it until the
+  body carried the form's marker, `<!-- external-plugin-submission -->`
+  (editing the issue reruns intake; so does a `/rerun-intake` comment);
+- Cline [#2997](https://github.com/cline/mcp-marketplace/issues/2997). Its
+  form asks to confirm a test in Cline; what was tested is the llms-install.md
+  config against the published package (it starts and answers with its
+  three tools), and the issue says so;
+- the Gemini gallery: automatic, from the `gemini-cli-extension` topic plus
+  `gemini-extension.json`;
+- the website brief: `michaelbeardsley-now/docs/git-for-me.md` and queue item
+  9 in its NEXT.md, uncommitted there as the other briefs are.
+
+**Left:**
+
 6. A badge per marketplace as each goes live (flat, one color, linking to the
-   listing). Repo topics for each route (`claude-code-plugin`,
-   `gemini-cli-extension`, `copilot-cli`, plus `gitlab` and `codeberg`), and
-   the repo description to match the blurb.
+   listing). The repo has GitHub's limit of 20 topics, set by Mike, without
+   `claude-code-plugin`: swap one out for it if he agrees.
 9. WMH's README calls Git for Me "the same for GitHub repos": change it to
    GitHub, GitLab and Codeberg. And fix WMH's USAGE.md token command: in
    `claude mcp add`, `-e` takes every value after it, so the server name must
    come before `-e` (`... where-my-hug -e HF_TOKEN=hf_... -- npx ...`), as
    Git for Me's USAGE.md now has it.
-10. The website brief: `michaelbeardsley-now/docs/git-for-me.md` and queue
-    item 9 in its NEXT.md, in the shape of `docs/thicken.md`: URL
-    `/projects/git-for-me/`, featured third (`order: 3`, after Where My Hug
-    At? and thicken), art from `.github/`, links to source, npm, the release,
-    skills.sh and the MCP Registry. Leave it uncommitted there, as the other
-    briefs are. When the page is live, set the repo's Website field to
+10. When the website's page is live, set the repo's Website field to
     `https://michaelbeardsley.now/projects/git-for-me/`.
 
 ## Gotchas
