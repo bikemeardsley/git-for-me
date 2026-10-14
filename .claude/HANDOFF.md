@@ -47,8 +47,9 @@ stub. Read this, then the README, then the code: it's small.
 - **Installed on this machine:** the user MCP entry `git-for-me` runs
   `node P:\windsurf\git-for-me\src\server.ts` with Mike's public-read-only
   fine-grained `GITHUB_TOKEN` (search limit 30 a minute, checked); the skill is
-  linked into `~/.claude/skills` and `~/.agents/skills`. Kitbash's MCP entry
-  and skill links were removed (its folder is untouched).
+  linked into `~/.claude/skills` and `~/.agents/skills`. Cline (nightly) runs
+  it the same way, with the same token. Kitbash is gone from the machine: its
+  MCP entries (Claude Code and Cline), skill links and folder.
 
 **Live runs** (subagents playing a real agent through the shell route, told
 not to read the source), 2026-10-14:

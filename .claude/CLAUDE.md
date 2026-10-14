@@ -71,9 +71,10 @@ decisions made, the open questions, and the launch plan. Then
   GitHub, GitLab or Codeberg (Git's trademark policy, checked 2026-10-14).
 - **Kitbash is GPL-2.0 and not ours.** Never its code or text, and no credit
   in the README (decided 2026-10-14): the search-first design is our own, and
-  only the goal, reuse before building, is shared. Its folder is still on this
-  machine (`P:\windsurf\kitbash`; its skill links and MCP entry were removed
-  2026-10-14): don't read its source while working here, so nothing leaks in.
+  only the goal, reuse before building, is shared. It was removed from this
+  machine on 2026-10-14 (its folder, skill links, and MCP entries in Claude
+  Code and Cline); if it ever comes back, don't read its source while working
+  here, so nothing leaks in.
 - **American English** in code, docs and commits.
 - **General, not tied to any one project.**
 - `GITHUB_TOKEN` is read from the environment, sent only to `api.github.com`,
