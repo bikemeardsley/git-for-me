@@ -1,0 +1,41 @@
+{
+  "name": "git-for-me",
+  "version": "0.0.0",
+  "description": "Git for me: tell your AI agent what you want to build. It searches GitHub for what already exists, so you use, adapt or build only what you must, with every repo checked live.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bikemeardsley/git-for-me.git"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "github",
+    "open-source",
+    "claude-code",
+    "agent-skills"
+  ],
+  "type": "module",
+  "bin": {
+    "git-for-me": "build/src/server.js"
+  },
+  "files": [
+    "build/src"
+  ],
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "prepare": "tsc",
+    "check": "tsc --noEmit",
+    "test": "node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "7.0.2"
+  }
+}
