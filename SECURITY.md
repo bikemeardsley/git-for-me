@@ -20,12 +20,14 @@ attacker gains.
 
 ## What Git for Me touches
 
-- **The network:** `GET` requests to `api.github.com`: repository searches
-  built from what the agent writes for each part of a need (a topic, a
-  language, keywords, a few words about the job), and one lookup per repo it
-  picks, to check it exists and read its facts. Nothing else is contacted.
+- **The network:** `GET` requests to `api.github.com`, `gitlab.com/api` and
+  `codeberg.org/api`: repository searches built from what the agent writes for
+  each part of a need (a topic, a language, keywords, a few words about the
+  job), and a lookup or two per repo it picks, to check it exists and read its
+  facts. Nothing else is contacted.
 - **`GITHUB_TOKEN`:** read from the environment if set, sent only to
-  `api.github.com`, and never written to a report, a log or a file.
+  `api.github.com`, never to GitLab or Codeberg, and never written to a report,
+  a log or a file.
 - **Your machine:** it reads no files, writes no files and runs no commands.
 - **`--http`:** serves the same three tools on a port, on 127.0.0.1 unless you
   give it a host. Anyone who can reach that port can use them, and with

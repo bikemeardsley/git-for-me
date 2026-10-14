@@ -1,8 +1,8 @@
-// The first step: the method the agent follows before anything is named. What an agent remembers of GitHub is as old
-// as its training and misses the long tail, so it doesn't pick from memory: it splits the need into parts,
-// git_for_me_search finds what GitHub has for each, the agent judges those results, and git_for_me_verify checks the
-// picks. Four details change the answer, so they come first: a call missing any gets questions back, not the method,
-// and "unknown" is a fine answer.
+// The first step: the method the agent follows before anything is named. What an agent remembers of open source is as
+// old as its training and misses the long tail, so it doesn't pick from memory: it splits the need into parts,
+// git_for_me_search finds what GitHub, GitLab and Codeberg have for each, the agent judges those results, and
+// git_for_me_verify checks the picks. Four details change the answer, so they come first: a call missing any gets
+// questions back, not the method, and "unknown" is a fine answer.
 
 export interface Details { need: string; stack?: string; platform?: string; license?: string; upkeep?: string }
 
@@ -26,7 +26,7 @@ ${missing.map((key) => `- ${key}: ${QUESTIONS[key]}`).join('\n')}
 "Not sure yet" is a fine answer: pass "unknown", and the picks will cover the range. Then call git_for_me again with all four filled in.`;
   }
   const { need, stack, platform, license, upkeep } = details;
-  return `Git for me? Work out what GitHub already has for this, so nothing is built from scratch that doesn't need to be.
+  return `Git for me? Work out what open source already has for this, so nothing is built from scratch that doesn't need to be.
 
 Need: ${need}
 Stack: ${stack}
@@ -40,28 +40,34 @@ Where a detail is "unknown", cover the range and say what each choice needs.
 2. Mark the parts that aren't worth a dependency WRITE: glue, configuration, logic only this project has, or a few lines a
    dependency would cost more than. A dependency for ten lines is a cost, not a feature. Every other part gets searched.
 
-3. Search before naming anything: call git_for_me_search with, for each part that isn't WRITE,
+3. Search before naming anything: call git_for_me_search with { "parts": [...] }, one entry for each part that isn't WRITE:
    { "id": "table-reader", "name": "Read the tables",
-     "topic": "pdf-parser",                  (the GitHub topic the job falls under: lowercase and hyphenated)
-     "language": "python",                   (the stack's language, to search only repos in it; leave it out to search all)
-     "keywords": ["pdf", "tables"],          (1 or 2 words a fitting repo's name or description might hold)
+     "topic": "pdf-parser",                  (the topic the job falls under, as repos are tagged: lowercase and hyphenated)
+     "language": "python",                   (the stack's language, to search only repos in it, or several the stack can use,
+                                              comma-separated: "typescript, javascript"; leave it out to search all)
+     "keywords": ["pdf", "tables"],          (1 or 2 single words, each searched on its own in names and descriptions)
      "phrase": "extract tables from pdf" }   (the job in a few words, as a README would put it)
-   It searches the topic's most starred and rising repos, names and descriptions holding each keyword, and README text.
-   If a part comes back thin, search again with other words: a job can sit under more than one topic.
+   It searches GitHub for the topic's most starred and rising repos, names and descriptions holding each keyword, and
+   README text, and GitLab and Codeberg by topic and keyword (GitLab's keywords in any language).
+   If a part comes back thin (little in it fits the job), search again with other words: a job can sit under more than
+   one topic.
 
 4. From what the search found, give each part its verdict:
    USE    a repo the search found does the job as it is: depend on it, or run it beside your code.
    ADAPT  one comes close: fork it or copy the part you need, license permitting, and change it.
    BUILD  none of what the search found does the job, and its results have to show it. Pick the closest repos to read first.
-   Then pick candidates from the results, by what they say (description, stars, recent pushes, license, language), not by
-   what you remember: 1 to 4 repos, best fit first. A repo you know that the search didn't turn up may be added, but it
+   Pick 1 to 4 candidates from the results, by what they say (description, stars, recent activity, license, language),
+   not by what you remember, each named as the search lists it (owner/name on GitHub, with its host first on the others:
+   gitlab.com/group/name, codeberg.org/owner/name). A repo you know that the search didn't turn up may be added, but it
    goes after the search's picks and the report marks it as from memory.
 
-5. Before ranking, check each candidate against what bites later:
-   - its license against the use: no license means all rights reserved, and copyleft can bind closed-source code;
+5. Check each candidate against what bites later, then put the best fit for these details first (a license the use can't
+   take, or upkeep the user doesn't want, ranks it lower):
+   - its license against the use: no license means all rights reserved; strong copyleft (GPL, AGPL) can bind the
+     closed-source code that uses it, and weak copyleft (LGPL, MPL) mostly binds changes to it;
    - its upkeep: archived, or no pushes in years, means every fix is yours;
    - the stack and platform: a library in another language can only run beside your code, as a separate tool or service;
-   - forks: prefer the original, unless the fork is where the work moved.
+   - forks and mirrors: prefer the original, unless the fork is where the work moved.
 
 6. Call git_for_me_verify with:
    { "need": "...",
@@ -69,6 +75,8 @@ Where a detail is "unknown", cover the range and say what each choice needs.
                       "verdict": "USE", "rationale": "why this verdict, and why these repos in this order",
                       "search": { "topic": "pdf-parser", "language": "python", "keywords": ["pdf", "tables"], "phrase": "extract tables from pdf" },
                       "candidates": [{ "id": "owner/name" }] }] }
-   Pass each part's last search unchanged; a WRITE part has none. Show the user nothing until it answers: its report is
-   what they see, with every fact checked on GitHub.`;
+   Pass each part's search unchanged, or a list of its searches if it was searched again: a pick from any of them counts
+   as found. A WRITE part has no search and no candidates. Write each rationale from what
+   the results showed, and mark anything you know only from memory as such: the report prints it beside facts checked
+   live, and names parts by name, never by id. Show the user nothing until it answers: its report is what they see.`;
 }
