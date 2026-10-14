@@ -1,0 +1,31 @@
+{
+  "name": "git-for-me",
+  "displayName": "Git for Me",
+  "version": "0.1.0",
+  "description": "Git for me? Tells your agent which parts of what you want to build open source already covers, on GitHub, GitLab and Codeberg: which repos to use as they are, which to adapt, and what's left to write, with every repo checked live.",
+  "author": { "name": "Mike Beardsley" },
+  "homepage": "https://github.com/bikemeardsley/git-for-me",
+  "repository": "https://github.com/bikemeardsley/git-for-me",
+  "license": "MIT",
+  "keywords": ["github", "gitlab", "codeberg", "open-source", "reuse", "mcp"],
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://github.com/bikemeardsley/git-for-me#readme",
+  "supportUrl": "https://github.com/bikemeardsley/git-for-me/issues",
+  "userConfig": {
+    "github_token": {
+      "type": "string",
+      "title": "GitHub token (optional)",
+      "description": "Raises GitHub's search limit from 10 a minute to 30 and adds private repos your account can see. A token with no scopes is enough. Sent only to api.github.com, never written to a report.",
+      "sensitive": true,
+      "default": ""
+    }
+  },
+  "mcpServers": {
+    "git-for-me": {
+      "command": "npx",
+      "args": ["-y", "git-for-me@0.1.0"],
+      "env": { "GITHUB_TOKEN": "${user_config.github_token}" },
+      "startup_timeout_sec": 120
+    }
+  }
+}

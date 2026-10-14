@@ -1,8 +1,9 @@
 {
   "name": "git-for-me",
-  "version": "0.0.0",
-  "description": "Git for me: tell your AI agent what you want to build. It searches GitHub for what already exists, so you use, adapt or build only what you must, with every repo checked live.",
+  "version": "0.1.0",
+  "description": "Git for me: odds are, most of what you want to build is already open source. Tell your AI agent what you're making; it finds the repos on GitHub, GitLab and Codeberg, every one checked live.",
   "license": "MIT",
+  "mcpName": "io.github.bikemeardsley/git-for-me",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bikemeardsley/git-for-me.git"
@@ -11,6 +12,8 @@
     "mcp",
     "mcp-server",
     "github",
+    "gitlab",
+    "codeberg",
     "open-source",
     "claude-code",
     "agent-skills"

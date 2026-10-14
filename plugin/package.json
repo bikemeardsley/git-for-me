@@ -1,0 +1,8 @@
+{
+  "name": "git-for-me-plugin",
+  "private": true,
+  "description": "Pins the npm package the plugin launches, so its install is locked and verifiable.",
+  "dependencies": {
+    "git-for-me": "0.1.0"
+  }
+}

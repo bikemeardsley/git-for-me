@@ -1,0 +1,12 @@
+{
+  "name": "git-for-me",
+  "owner": { "name": "Mike Beardsley" },
+  "description": "Git for me? Open-source repos for what you want to build, each one checked live.",
+  "plugins": [
+    {
+      "name": "git-for-me",
+      "source": "./plugin",
+      "description": "Which parts of what you want to build open source already covers: which repos to use as they are, which to adapt, and what's left to write, with every repo checked live."
+    }
+  ]
+}
