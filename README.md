@@ -12,6 +12,7 @@
   <a href="https://github.com/bikemeardsley/git-for-me/actions/workflows/test.yml"><img src="https://github.com/bikemeardsley/git-for-me/actions/workflows/test.yml/badge.svg" alt="Tests"></a>
   <a href="https://registry.modelcontextprotocol.io/?q=git-for-me"><img src="https://img.shields.io/badge/MCP_Registry-111111?logo=modelcontextprotocol&logoColor=white" alt="In the official MCP Registry"></a>
   <a href="https://skills.sh/bikemeardsley/git-for-me/git-for-me"><img src="https://img.shields.io/badge/skills.sh-111111" alt="On skills.sh"></a>
+  <a href="https://cursor.directory/plugins/git-for-me"><img src="https://img.shields.io/badge/cursor.directory-111111?logo=cursor&logoColor=white" alt="On cursor.directory"></a>
   <a href="https://github.com/search"><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" alt="GitHub"></a>
   <a href="https://gitlab.com/explore/projects"><img src="https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=white" alt="GitLab"></a>
   <a href="https://codeberg.org/explore/repos"><img src="https://img.shields.io/badge/Codeberg-2185D0?logo=codeberg&logoColor=white" alt="Codeberg"></a>

@@ -157,10 +157,18 @@ Also done: the repo topics (Mike swapped `claude-code-plugin` into the 20),
 and WMH's companion line and its USAGE.md token command (`-e` takes every
 value after it, so the server name goes first), pushed to WMH as `7588d7e`.
 
+Later the same day, by Mike: cursor.directory, live at
+https://cursor.directory/plugins/git-for-me (badge added; WMH and thicken got
+theirs too); Glama, "Runs from source", awaiting approval, after which Glama
+emails for a Dockerfile; Smithery, skill only (its server form wants a hosted
+HTTPS URL), where the GitHub import kept failing.
+
 **Left:**
 
 - A badge per marketplace as each listing goes live (flat, one color,
-  linking to the listing): Claude's plugin directory, awesome-copilot, Cline.
+  linking to the listing): Claude's plugin directory, awesome-copilot, Cline,
+  Glama, Smithery.
+- Glama's Dockerfile, when its email asks for one.
 - When the website's page is live, set the repo's Website field to
   `https://michaelbeardsley.now/projects/git-for-me/`.
 - For WMH: port the list of searches per part (open question 5).
