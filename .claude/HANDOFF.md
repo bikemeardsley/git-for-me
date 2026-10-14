@@ -145,10 +145,9 @@ the repo description now matches the blurb.
   whose labels a non-maintainer can't set, so intake skipped it until the
   body carried the form's marker, `<!-- external-plugin-submission -->`
   (editing the issue reruns intake; so does a `/rerun-intake` comment);
-- Cline [#2997](https://github.com/cline/mcp-marketplace/issues/2997). Its
-  form asks to confirm a test in Cline; what was tested is the llms-install.md
-  config against the published package (it starts and answers with its
-  three tools), and the issue says so;
+- Cline [#2997](https://github.com/cline/mcp-marketplace/issues/2997), after
+  Mike tested it in Cline (set up from llms-install.md, its three tools
+  connected);
 - the Gemini gallery: automatic, from the `gemini-cli-extension` topic plus
   `gemini-extension.json`;
 - the website brief: `michaelbeardsley-now/docs/git-for-me.md` and queue item
