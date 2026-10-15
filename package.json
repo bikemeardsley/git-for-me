@@ -1,7 +1,7 @@
 {
   "name": "git-for-me",
   "version": "0.1.0",
-  "description": "Git for me: odds are, most of what you want to build is already open source. Tell your AI agent what you're making; it finds the repos on GitHub, GitLab and Codeberg, every one checked live.",
+  "description": "Git for me! Odds are, most of what you want to build is already open source. Tell your AI agent what you're making; it finds the repos on GitHub, GitLab and Codeberg, every one checked live.",
   "license": "MIT",
   "mcpName": "io.github.bikemeardsley/git-for-me",
   "repository": {

@@ -154,7 +154,7 @@ function report(need: string, parts: Part[], unanswered: number): string {
     .map((verdict) => [parts.filter((part) => part.verdict === verdict).length, { USE: 'to use as is', ADAPT: 'to adapt', BUILD: 'to build', WRITE: 'to write' }[verdict]] as const)
     .filter(([n]) => n).map(([n, words]) => `${n} ${words}`);
   const lines = [
-    '# Git for me', '',
+    '# Git for me!', '',
     `**${need}**`, '',
     `${parts.length} ${parts.length === 1 ? 'part' : 'parts'}: ${tally.join(', ')}.`, '',
     `_Searched and checked live just now: ${named} named${remembered ? `, ${remembered} from memory rather than the search` : ''}, ${dropped} not there and dropped${elsewhere ? `, ${elsewhere} on a forge it can't check` : ''}${unchecked ? `, ${unchecked} left unchecked as ${unchecked === 1 ? 'its forge' : 'their forges'} didn't answer` : ''}${unanswered ? `; ${unanswered} ${unanswered === 1 ? 'search' : 'searches'} didn't answer, so no pick is marked from memory` : ''}._`,

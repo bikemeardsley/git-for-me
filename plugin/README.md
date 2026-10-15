@@ -1,4 +1,4 @@
-# Git for Me (plugin)
+# Git for Me! (plugin)
 
 Odds are, most of what you want to build is already open source. Tell your AI
 agent what you're making: it searches GitHub, GitLab and Codeberg for each part

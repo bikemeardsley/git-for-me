@@ -32,7 +32,7 @@ test('serves the three tools over stdio, as Claude Code starts it', async () => 
 
     // A slate with nothing to look up never reaches the network.
     const verified = text(await client.callTool({ name: 'git_for_me_verify', arguments: WRITE_ONLY }));
-    assert.match(verified, /^# Git for me/);
+    assert.match(verified, /^# Git for me!/);
     assert.match(verified, /"nextAction":"DONE"/);
 
     assert.equal((await client.callTool({ name: 'git_for_me_verify', arguments: { need: 'x', components: [] } })).isError, true);
@@ -61,7 +61,7 @@ test('runs the same three steps from a shell, for an agent without MCP', () => {
     execFileSync(process.execPath, [server, command], { input: JSON.stringify(input), encoding: 'utf8', stdio: 'pipe' });
   assert.match(run('rubric', { need: 'turn PDFs into spreadsheets', stack: 'Python' }), /^- platform:/m);
   const report = run('verify', WRITE_ONLY);
-  assert.match(report, /^# Git for me/);
+  assert.match(report, /^# Git for me!/);
   assert.match(report, /"nextAction":"DONE"/);
   assert.throws(() => run('verify', { need: 'x', components: [] })); // the same checks as the tool
   // A mistake is said plainly, for the agent to fix, not as a stack trace.

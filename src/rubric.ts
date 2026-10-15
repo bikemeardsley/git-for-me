@@ -16,7 +16,7 @@ const QUESTIONS = {
 export function rubric(details: Details): string {
   const missing = (Object.keys(QUESTIONS) as (keyof typeof QUESTIONS)[]).filter((key) => !details[key]?.trim());
   if (missing.length) {
-    return `Git for me? Before any searching, ${missing.length === 1 ? 'one detail changes' : 'these details change'} the answer.
+    return `Git for me! Before any searching, ${missing.length === 1 ? 'one detail changes' : 'these details change'} the answer.
 
 Need: ${details.need}
 
@@ -26,7 +26,7 @@ ${missing.map((key) => `- ${key}: ${QUESTIONS[key]}`).join('\n')}
 "Not sure yet" is a fine answer: pass "unknown", and the picks will cover the range. Then call git_for_me again with all four filled in.`;
   }
   const { need, stack, platform, license, upkeep } = details;
-  return `Git for me? Work out what open source already has for this, so nothing is built from scratch that doesn't need to be.
+  return `Git for me! Work out what open source already has for this, so nothing is built from scratch that doesn't need to be.
 
 Need: ${need}
 Stack: ${stack}

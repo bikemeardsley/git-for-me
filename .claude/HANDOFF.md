@@ -1,4 +1,4 @@
-# Handoff: launching Git for Me
+# Handoff: launching Git for Me!
 
 Updated 2026-10-14, at the end of the session that built it out from the
 stub. Read this, then the README, then the code: it's small.
@@ -106,7 +106,7 @@ found nothing that held up; north-mini-code-free (explorer) returned nothing
 - **gitea.com:** 31.6k public repos (Codeberg: 451k). **Bitbucket:** no
   public search (the global repository listing answers 404).
 - Git's trademark policy (git-scm.com/about/trademark) bans "Git" as a
-  syllable or portmanteau and implied affiliation; "Git for Me" is neither,
+  syllable or portmanteau and implied affiliation; "Git for Me!" is neither,
   and the README says it isn't affiliated.
 
 ## Open questions

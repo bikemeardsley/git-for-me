@@ -1,7 +1,7 @@
 {
   "name": "git-for-me",
   "owner": { "name": "Mike Beardsley" },
-  "description": "Git for me? Open-source repos for what you want to build, each one checked live.",
+  "description": "Git for me! Open-source repos for what you want to build, each one checked live.",
   "plugins": [
     {
       "name": "git-for-me",

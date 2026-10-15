@@ -18,7 +18,7 @@ Please don't open a public issue for a vulnerability.
 Include what you can: the version or commit, steps to reproduce, and what an
 attacker gains.
 
-## What Git for Me touches
+## What Git for Me! touches
 
 - **The network:** `GET` requests to `api.github.com`, `gitlab.com/api` and
   `codeberg.org/api`: repository searches built from what the agent writes for

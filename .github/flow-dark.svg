@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 32 920 360" role="img" aria-labelledby="flow-dark-title flow-dark-desc">
-<title id="flow-dark-title">How Git for Me works</title>
+<title id="flow-dark-title">How Git for Me! works</title>
 <desc id="flow-dark-desc">What you want to build, with four questions asked first (stack, platform, license, upkeep), is split into parts: jobs with an input and an output. A part a repo might do goes to Find it, which searches GitHub, GitLab and Codeberg: the most starred in the topic and names holding each keyword, and on GitHub the rising repos and README text too. Its verdict, use, adapt or build, comes from what the search found. A part not worth a dependency is marked write and needs no search. Your report checks every pick live: real, licensed, with its risks flagged.</desc>
 <defs>
 <marker id="flow-dark-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9da7b3"/></marker>

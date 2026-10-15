@@ -1,8 +1,8 @@
 {
   "name": "git-for-me",
-  "displayName": "Git for Me",
+  "displayName": "Git for Me!",
   "version": "0.1.0",
-  "description": "Git for me? Tells your agent which parts of what you want to build open source already covers, on GitHub, GitLab and Codeberg: which repos to use as they are, which to adapt, and what's left to write, with every repo checked live.",
+  "description": "Git for me! Tells your agent which parts of what you want to build open source already covers, on GitHub, GitLab and Codeberg: which repos to use as they are, which to adapt, and what's left to write, with every repo checked live.",
   "author": { "name": "Mike Beardsley" },
   "homepage": "https://github.com/bikemeardsley/git-for-me",
   "repository": "https://github.com/bikemeardsley/git-for-me",

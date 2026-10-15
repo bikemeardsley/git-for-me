@@ -1,11 +1,11 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/logo-dark.svg">
-    <img src=".github/logo.svg" width="220" alt="The Git for Me mascot: an ink-drawn hermit crab that has just moved into a spiral shell it found, eyes on stalks looking up at it, one claw raised, an exclamation mark beside it">
+    <img src=".github/logo.svg" width="220" alt="The Git for Me! mascot: an ink-drawn hermit crab that has just moved into a spiral shell it found, eyes on stalks looking up at it, one claw raised, an exclamation mark beside it">
   </picture>
 </p>
 
-<h1 align="center">Git for Me</h1>
+<h1 align="center">Git for Me!</h1>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/git-for-me"><img src="https://img.shields.io/npm/v/git-for-me?color=cb3837&logo=npm" alt="npm"></a>

@@ -1,4 +1,4 @@
-# Git for Me
+# Git for Me!
 
 An MCP server: describe what you want to build, and it says which parts open
 source already covers, from a live search of GitHub, GitLab and Codeberg:
@@ -65,7 +65,9 @@ decisions made, the open questions, and the launch plan. Then
   `flow-dark.svg` are kept in step; after changing them, re-render
   `.github/social-preview.png` from `social-preview.svg` at 1280×640 (it pulls
   in `logo.svg` and `flow.svg`) and upload it under Settings → Social preview.
-- **Name:** "Git for Me" in prose; `git-for-me` for the package, repo and
+- **Name:** "Git for Me!" in prose (decided 2026-10-15, matching "Where My
+  Hug At?"), "Git for me!" where it's the hook (titles, report heading,
+  description openers); `git-for-me` for the package, repo and
   command; `git_for_me` for the tools. Never "GFM", which already means GitHub
   Flavored Markdown. The README says it isn't affiliated with the Git project,
   GitHub, GitLab or Codeberg (Git's trademark policy, checked 2026-10-14).

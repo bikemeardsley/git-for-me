@@ -1,6 +1,6 @@
-# Installing Git for Me (for an AI agent)
+# Installing Git for Me! (for an AI agent)
 
-Git for Me is a local MCP server, published on npm as `git-for-me`. There is
+Git for Me! is a local MCP server, published on npm as `git-for-me`. There is
 nothing to clone or build and no API key to obtain.
 
 ## Requirements

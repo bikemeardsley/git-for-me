@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Git for Me as an MCP server on stdio. Three tools, called in order: the rubric the agent follows, the search of
+// Git for Me! as an MCP server on stdio. Three tools, called in order: the rubric the agent follows, the search of
 // GitHub, GitLab and Codeberg it picks repos from, then the live check that writes the report the user sees. For an
 // agent without MCP, the same three run from a shell: `git-for-me rubric`, `search` and `verify`, JSON on stdin. For a
 // client that speaks MCP over HTTP only, `git-for-me --http` serves them at /mcp.
@@ -52,17 +52,17 @@ const verified = async (args: z.infer<z.ZodObject<typeof slate>>) => {
 function serve() {
   const server = new McpServer({ name: 'git-for-me', version: '0.1.0' });
   server.registerTool('git_for_me', {
-    title: 'Git for me',
+    title: 'Git for me!',
     description: 'Step 1 of 3, before recommending any open-source repo or writing something that might already exist. If stack, platform, license or upkeep is missing, returns the questions to ask the user first: call again with the answers ("unknown" is fine). Then returns the method: split what the user wants to build into parts, search GitHub, GitLab and Codeberg for each with git_for_me_search, and decide from what it finds which parts an existing repo covers (use it as is or adapt it), which nothing covers (build it), and which are not worth a dependency (write them). Follow it.',
     inputSchema: details,
   }, async (args) => ({ content: [{ type: 'text', text: rubric(args) }] }));
   server.registerTool('git_for_me_search', {
-    title: 'Git for me (searched live)',
+    title: 'Git for me! (searched live)',
     description: "Step 2 of 3: searches for each part: on GitHub the topic's most starred and rising repos, names and descriptions holding each keyword, and README text; on GitLab and Codeberg the topic and the keywords. Returns what it found, with stars, license, language, last activity and how each turned up, to pick each part's verdict and candidates from. Then call git_for_me_verify.",
     inputSchema: wanted,
   }, async ({ parts }) => ({ content: [{ type: 'text', text: await find(parts) }] }));
   server.registerTool('git_for_me_verify', {
-    title: 'Git for me (checked live)',
+    title: 'Git for me! (checked live)',
     description: "Step 3 of 3: checks every picked repo live on its forge, drops the ones that are not there, flags no license, copyleft, archived, stale, little used, forks and mirrors, marks picks the search didn't turn up as from memory, shows what it found that wasn't picked, and returns the report to show the user. If nextAction is SEARCH_FIRST or RECALL_REPLACEMENTS, do what its instructions say and call again.",
     inputSchema: slate,
   }, async (args) => ({ content: [{ type: 'text', text: await verified(args) }] }));
@@ -91,7 +91,7 @@ else if (command === '--http' && port) {
     res.on('close', () => transport.close());
     await serve().connect(transport);
     await transport.handleRequest(req, res);
-  }).listen(Number(port), host, () => console.error(`Git for Me at http://${host}:${port}/mcp`));
+  }).listen(Number(port), host, () => console.error(`Git for Me! at http://${host}:${port}/mcp`));
 } else if (command) {
   console.error([
     'Usage: git-for-me                          serve the MCP tools on stdio',

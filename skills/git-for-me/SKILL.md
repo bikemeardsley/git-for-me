@@ -3,10 +3,10 @@ name: git-for-me
 description: Find out what open source already has before building something from scratch. Use when the user describes an app, tool, CLI, library or feature they want to build, asks whether something like it already exists, or is about to write code an open-source repo might already cover. Splits the build into parts, searches GitHub, GitLab and Codeberg live for each, decides from what it finds whether to use a repo as is (USE), adapt one (ADAPT), build it (BUILD), or write it without a dependency (WRITE), and checks every repo picked, with licenses, upkeep, forks and mirrors flagged.
 ---
 
-# Git for me
+# Git for me!
 
 What you remember of open source is as old as your training and misses the
-long tail. So don't pick from memory: Git for Me searches GitHub, GitLab and
+long tail. So don't pick from memory: Git for Me! searches GitHub, GitLab and
 Codeberg for each part of what the user wants to build, you pick from what it
 finds, and it checks every pick live and writes the report the user sees.
 Three steps, always in order.

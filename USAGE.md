@@ -1,4 +1,4 @@
-# Using Git for Me
+# Using Git for Me!
 
 Setup for each agent, then what to expect when you use it. The
 [README](README.md) has the short version.
