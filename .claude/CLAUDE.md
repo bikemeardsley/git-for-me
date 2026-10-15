@@ -42,7 +42,7 @@ decisions made, the open questions, and the launch plan. Then
   Copilot; beside it `plugin/plugin.json`), `gemini-extension.json`,
   `skills/git-for-me/SKILL.md` (copied to `plugin/skills/`, a test keeps them
   equal), USAGE.md, llms-install.md and the README: change one, change them
-  all. The manifests pin the version (`git-for-me@0.1.0`), as Claude's plugin
+  all. The manifests pin the version (`git-for-me@0.1.1`), as Claude's plugin
   directory requires; the README and skill don't. No Cursor plugin (Mike
   passed on Cursor's marketplace for WMH).
 - **A release** bumps the version in `package.json`, `src/server.ts`,

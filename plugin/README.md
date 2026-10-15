@@ -8,7 +8,7 @@ for license, upkeep, forks and mirrors.
 
 This plugin adds two things to Claude Code:
 
-- **The `git-for-me` MCP server**, run with `npx -y git-for-me@0.1.0` from the
+- **The `git-for-me` MCP server**, run with `npx -y git-for-me@0.1.1` from the
   [npm package](https://www.npmjs.com/package/git-for-me). It makes `GET`
   requests to `api.github.com`, `gitlab.com/api` and `codeberg.org/api`
   (searches from what your agent writes for each part of the job, and the repos

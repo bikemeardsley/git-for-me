@@ -1,8 +1,8 @@
 {
   "name": "git-for-me",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Git for me! Which parts of what you want to build open source already covers, on GitHub, GitLab and Codeberg, with every repo checked live.",
   "mcpServers": {
-    "git-for-me": { "command": "npx", "args": ["-y", "git-for-me@0.1.0"] }
+    "git-for-me": { "command": "npx", "args": ["-y", "git-for-me@0.1.1"] }
   }
 }
