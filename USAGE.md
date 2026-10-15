@@ -165,6 +165,15 @@ server under `mcpServers`. Or ask Cline to install it: it follows
 
 Docs: [Cline MCP](https://docs.cline.bot/mcp-servers/configuring-mcp-servers)
 
+## Antigravity CLI
+
+```sh
+agy plugin install https://github.com/bikemeardsley/git-for-me/tree/main/plugin
+```
+
+The plugin brings the skill and the MCP server. Coming from the Gemini CLI
+extension? `agy plugin import gemini` converts it.
+
 ## Gemini CLI
 
 ```sh
