@@ -138,6 +138,16 @@ skills.sh (installed once into a scratch folder); the social preview (Mike);
 badges for npm, the MCP Registry and skills.sh, and "pre-release" dropped;
 the repo description now matches the blurb.
 
+**Done, 2026-10-15:** 0.1.1, the "Git for Me!" name ("Git for me!" as the
+hook) and the flow's "Find git" step: npm (Mike), tags and the
+[v0.1.1 release](https://github.com/bikemeardsley/git-for-me/releases/tag/v0.1.1),
+the plugin's launcher lock. Glama: claimed, and its Dockerfile config (on
+Glama, nothing in the repo) is `["npm ci"]` then
+`["mcp-proxy","--","node","build/src/server.js"]`, build test passed; a score
+badge in the README and `glama.json` (its schema has only `maintainers`).
+npm's and the MCP Registry's logins both expire, so each release starts with
+`npm login` (Mike) and `mcp-publisher login github` (device code).
+
 **Submitted, pending review:**
 
 - the Claude plugin directory (Mike);
