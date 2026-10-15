@@ -3,3 +3,6 @@ node_modules/
 .env.*
 *.log
 build/
+
+# Codex plugin upload (see .claude/CLAUDE.md)
+git-for-me-codex.zip

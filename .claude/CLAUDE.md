@@ -57,6 +57,14 @@ decisions made, the open questions, and the launch plan. Then
   tags `vX.Y.Z` and
   `git-for-me--vX.Y.Z`, a GitHub release, and `mcp-publisher publish` for the
   MCP Registry.
+- **Codex / ChatGPT plugin directory.** Being submitted at
+  platform.openai.com/plugins as a skills-only plugin: the portal refuses
+  `userConfig` and local `npx` MCP servers, so the upload is
+  `git-for-me-codex.zip` (gitignored, repo root) holding
+  `.claude-plugin/plugin.json` minus `userConfig` and `mcpServers`, the icon,
+  and `plugin/skills/`. Rebuild it after a release or a skill change, and keep
+  the skill provider-neutral (no Claude-only wording). Badge only once it's
+  approved.
 - **Design with the skills, never by hand.** Diagrams with `/diagram-design`,
   under this project's own profile (`git-for-me`, in
   `~/.diagram-design/profiles/`, set by the `.diagram-design` marker), never
