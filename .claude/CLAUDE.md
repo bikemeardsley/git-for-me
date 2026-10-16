@@ -70,6 +70,12 @@ decisions made, the open questions, and the launch plan. Then
   also wants a subtitle of 30 characters or fewer, website, support, privacy
   (PRIVACY.md) and terms (TERMS.md) URLs, and an app icon. Keep the skill
   provider-neutral either way.
+- **GitHub Copilot plugin directory: rejected, closed.** Decided 2026-10-15:
+  not a fit, since it serves one particular way of working and Copilot can
+  already search GitHub itself. There is no way to resubmit; don't try the
+  directory again. The self-hosted route (`copilot plugin marketplace add`)
+  still works, so `plugin/plugin.json` and `plugin/mcp.json` stay in the
+  release checklist for it.
 - **Design with the skills, never by hand.** Diagrams with `/diagram-design`,
   under this project's own profile (`git-for-me`, in
   `~/.diagram-design/profiles/`, set by the `.diagram-design` marker), never
