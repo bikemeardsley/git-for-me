@@ -1,0 +1,60 @@
+# Publishing a GitHub release publishes the package to npm. No token is stored
+# anywhere: npm trusts this workflow by name (Trusted Publishing, OIDC), set up
+# once on npmjs.com > git-for-me > Settings > Trusted publisher: GitHub Actions,
+# bikemeardsley / git-for-me, workflow release.yml, environment release.
+#
+# The release's tag must be v<version> on a commit in main, with every file the
+# release checklist bumps at that version; anything else stops before publishing.
+name: release
+
+on:
+  release:
+    types: [published]        # a publish that failed: "Re-run failed jobs" on that run
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: "22"
+      - name: The tag and the version files agree; the commit is in main
+        run: |
+          version="$(node -p 'require("./package.json").version')"
+          test "$GITHUB_REF_NAME" = "v$version" || { echo "tag $GITHUB_REF_NAME is not v$version (package.json)"; exit 1; }
+          # plugin/package.json is left out: it's bumped after the package is on npm
+          stale="$(grep -LF "$version" src/server.ts server.json plugin/.claude-plugin/plugin.json plugin/plugin.json plugin/mcp.json plugin/mcp_config.json gemini-extension.json)" || true
+          test -z "$stale" || { echo "not at $version: $stale"; exit 1; }
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/main || { echo "$GITHUB_SHA is not in main"; exit 1; }
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+
+  npm:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: release
+    permissions:
+      contents: read
+      id-token: write       # the OIDC token npm trusts in place of a stored one
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm install -g npm@^11.5.1   # trusted publishing needs 11.5.1 or later
+      - run: npm ci                       # its prepare script builds build/ with tsc
+      - run: npm publish                  # provenance is attached automatically

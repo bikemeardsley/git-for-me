@@ -51,12 +51,11 @@ decisions made, the open questions, and the launch plan. Then
   `plugin/mcp_config.json` (the same servers, for Antigravity),
   `gemini-extension.json` and `plugin/package.json` (then
   `npm install --package-lock-only --ignore-scripts` in `plugin/` once the new
-  version is on npm, for the directory's launcher lock); then `npm publish`
-  (staged: Mike approves it on npmjs.com; after renaming a source file, delete
-  `build/` first, since `tsc` leaves the old file there and npm would ship it),
-  tags `vX.Y.Z` and
-  `git-for-me--vX.Y.Z`, a GitHub release, and `mcp-publisher publish` for the
-  MCP Registry.
+  version is on npm, for the directory's launcher lock); then tags `vX.Y.Z`
+  and `git-for-me--vX.Y.Z` and a GitHub release from `vX.Y.Z`, which publishes
+  to npm (`.github/workflows/release.yml`, Trusted Publishing: no token, and it
+  refuses a tag that doesn't match every file above but `plugin/package.json`,
+  or a commit not in main); then `mcp-publisher publish` for the MCP Registry.
 - **Codex / ChatGPT plugin directory: likely a dead end, for a while or for
   good.** Tried 2026-10-15. The portal (platform.openai.com/plugins) answered
   "We are not accepting more skills-only submissions at this time", and a
