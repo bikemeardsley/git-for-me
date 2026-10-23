@@ -3,8 +3,8 @@
   "name": "io.github.bikemeardsley/git-for-me",
   "description": "Which parts of what you want to build open source already covers. Every repo checked live.",
   "repository": { "url": "https://github.com/bikemeardsley/git-for-me", "source": "github" },
-  "version": "0.1.2",
+  "version": "0.1.3",
   "packages": [
-    { "registryType": "npm", "identifier": "git-for-me", "version": "0.1.2", "transport": { "type": "stdio" } }
+    { "registryType": "npm", "identifier": "git-for-me", "version": "0.1.3", "transport": { "type": "stdio" } }
   ]
 }

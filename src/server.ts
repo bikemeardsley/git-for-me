@@ -50,7 +50,7 @@ const verified = async (args: z.infer<z.ZodObject<typeof slate>>) => {
 };
 
 function serve() {
-  const server = new McpServer({ name: 'git-for-me', version: '0.1.2' });
+  const server = new McpServer({ name: 'git-for-me', version: '0.1.3' });
   server.registerTool('git_for_me', {
     title: 'Git for me!',
     description: 'Step 1 of 3, before recommending any open-source repo or writing something that might already exist. If stack, platform, license or upkeep is missing, returns the questions to ask the user first: call again with the answers ("unknown" is fine). Then returns the method: split what the user wants to build into parts, search GitHub, GitLab and Codeberg for each with git_for_me_search, and decide from what it finds which parts an existing repo covers (use it as is or adapt it), which nothing covers (build it), and which are not worth a dependency (write them). Follow it.',

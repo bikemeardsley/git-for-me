@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
-    "git-for-me": { "type": "stdio", "command": "npx", "args": ["-y", "git-for-me@0.1.2"] }
+    "git-for-me": { "type": "stdio", "command": "npx", "args": ["-y", "git-for-me@0.1.3"] }
   }
 }
