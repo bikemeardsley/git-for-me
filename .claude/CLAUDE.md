@@ -55,7 +55,9 @@ decisions made, the open questions, and the launch plan. Then
   and `git-for-me--vX.Y.Z` and a GitHub release from `vX.Y.Z`, which publishes
   to npm and then the MCP Registry (`.github/workflows/release.yml`, OIDC: no
   token, and it refuses a tag that doesn't match every file above but
-  `plugin/package.json`, or a commit not in main).
+  `plugin/package.json`, or a commit not in main). npm stages the publish:
+  the registry job fails until Mike approves the version on npmjs.com, then
+  "Re-run failed jobs" on that run.
 - **Codex / ChatGPT plugin directory: likely a dead end, for a while or for
   good.** Tried 2026-10-15. The portal (platform.openai.com/plugins) answered
   "We are not accepting more skills-only submissions at this time", and a
