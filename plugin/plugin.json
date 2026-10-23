@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "git-for-me",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Git for me! Tells your agent which parts of what you want to build open source already covers, on GitHub, GitLab and Codeberg: which repos to use as they are, which to adapt, and what's left to write, with every repo checked live.",
   "author": { "name": "Mike Beardsley" },
   "homepage": "https://github.com/bikemeardsley/git-for-me",
