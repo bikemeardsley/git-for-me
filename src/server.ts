@@ -63,7 +63,7 @@ function serve() {
   }, async ({ parts }) => ({ content: [{ type: 'text', text: await find(parts) }] }));
   server.registerTool('git_for_me_verify', {
     title: 'Git for me! (checked live)',
-    description: "Step 3 of 3: checks every picked repo live on its forge, drops the ones that are not there, flags no license, copyleft, archived, stale, little used, forks and mirrors, marks picks the search didn't turn up as from memory, shows what it found that wasn't picked, and returns the report to show the user. If nextAction is SEARCH_FIRST or RECALL_REPLACEMENTS, do what its instructions say and call again.",
+    description: "Step 3 of 3: checks every picked repo live on its forge, drops the ones that are not there, flags no license, copyleft, archived, stale, little used, forks and mirrors, marks picks the search didn't turn up as from memory, shows what it found that wasn't picked, and returns the report to show the user, with each repo's link (keep the links if you shorten it). If nextAction is SEARCH_FIRST or RECALL_REPLACEMENTS, do what its instructions say and call again.",
     inputSchema: slate,
   }, async (args) => ({ content: [{ type: 'text', text: await verified(args) }] }));
   return server;

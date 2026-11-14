@@ -41,7 +41,7 @@ From a shell, a search GitHub turns away for its rate limit waits up to a
 minute for the limit to lift, so give these commands two minutes.
 
 Show the user the markdown report as it comes back, without restating its
-facts from memory. Public repos need no token, but GitHub allows only 10
+facts from memory. Keep each repo's link, even if you shorten the report. Public repos need no token, but GitHub allows only 10
 searches a minute without one; a `GITHUB_TOKEN` in the server's own
 configuration raises that to 30 and adds private GitHub repos it can see.
 GitLab and Codeberg need none. Never ask for a token in the chat.

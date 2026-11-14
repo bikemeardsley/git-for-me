@@ -75,7 +75,7 @@ export async function verify({ need, components }: { need: string; components: C
       ? `These parts were picked without searching: ${unsearched.join(', ')}. Call git_for_me_search for them, pick their candidates from what it finds, then call git_for_me_verify again with the whole slate and each part's search query.`
       : recall.length
         ? `These parts need new repos: ${recall.join(', ')}. Pick them from git_for_me_search's results (not the dropped ones again; search again with other words if those ran out), then call git_for_me_verify again with the whole slate.`
-        : "Show the user the markdown report as it is. Its facts came from the forges just now; don't restate them from memory.",
+        : "Show the user the markdown report as it is, links included. Its facts came from the forges just now; don't restate them from memory. If you shorten it, keep each repo's link.",
   };
   return { markdown: report(need, parts, unanswered), result };
 }
