@@ -40,9 +40,9 @@ decisions made, the open questions, and the launch plan. Then
   skill's shell fallback all run. It's written in
   `plugin/.claude-plugin/plugin.json`, `plugin/mcp.json` (Agent Plugins, for
   Copilot; beside it `plugin/plugin.json`), `gemini-extension.json`,
-  `skills/git-for-me/SKILL.md` (copied to `plugin/skills/` and
-  `skill-plugin/skills/`, a test keeps them equal), USAGE.md, llms-install.md
-  and the README: change one, change them all. The manifests in `plugin/` pin
+  `skills/git-for-me/SKILL.md` (copied to `plugin/skills/`, a test keeps them
+  equal), USAGE.md, llms-install.md and the README: change one, change them
+  all. The manifests in `plugin/` pin
   the version (`git-for-me@0.1.1`); the README and skill don't. No Cursor
   plugin (Mike passed on Cursor's marketplace for WMH).
 - **Claude's plugin directory gets the skill alone** (`skill-plugin/`,
@@ -51,8 +51,12 @@ decisions made, the open questions, and the launch plan. Then
   no local MCP server, no `package.json` with a lockfile, and no field Claude
   Code doesn't read. It reads the plugin path its submission names (changed
   only by a new submission), so `skill-plugin/` is submitted on its own, with
-  no `mcpServers`, `userConfig` or `package.json` (a test checks), and the
-  skill runs from a shell there. `.claude-plugin/marketplace.json` stays on
+  no `mcpServers`, `userConfig` or `package.json` (a test checks). Its
+  Compliance step needs "does not execute code outside its declared MCP
+  servers" ticked, so `skill-plugin/skills/git-for-me/SKILL.md` is its own
+  skill, not a copy: the tools only, no shell path, and without them it
+  gives the user the `claude mcp add` command. Same frontmatter as
+  `skills/` (a test checks); keep the rest in step by hand. `.claude-plugin/marketplace.json` stays on
   `plugin/`, so whoever adds the marketplace keeps the tools. Never add a
   server or a package install to `skill-plugin/`.
 - **A release** bumps the version in `package.json`, `src/server.ts`,

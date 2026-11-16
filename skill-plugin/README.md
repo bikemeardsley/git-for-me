@@ -6,26 +6,29 @@ of the job and tells you which repos to use as they are, which to adapt, and
 what's left for you to write. Every repo it picks is checked live and flagged
 for license, upkeep, forks and mirrors.
 
-This plugin adds one thing to Claude Code: **the `git-for-me` skill**, which
-tells Claude when to use Git for Me! and runs its three steps with
-`npx -y git-for-me` in a shell, from the
-[npm package](https://www.npmjs.com/package/git-for-me). That makes `GET`
-requests to `api.github.com`, `gitlab.com/api` and `codeberg.org/api`
-(searches from what your agent writes for each part of the job, and the repos
-it picks), and nothing else. `npx` downloads the package from the npm registry
-(`registry.npmjs.org`) when it runs.
-
-For the same steps as MCP tools, with no shell commands to approve, add the
-server too:
+**Add the MCP server once, then restart Claude Code:**
 
 ```sh
 claude mcp add --scope user git-for-me -- npx -y git-for-me
 ```
 
-An optional `GITHUB_TOKEN` in your environment (or, with the server, given to
-`claude mcp add` as `-e GITHUB_TOKEN=...`) raises GitHub's search limit from 10
-a minute to 30 and adds private repos your account can see. A token with no
-scopes is enough. It is sent only to api.github.com.
+This plugin is **the `git-for-me` skill** alone, which tells Claude when to use
+the server's three tools and how. It runs nothing itself: without the server,
+it asks you to add it.
+
+The server is the [npm package](https://www.npmjs.com/package/git-for-me),
+which `npx` downloads from the npm registry (`registry.npmjs.org`). It makes
+`GET` requests to `api.github.com`, `gitlab.com/api` and `codeberg.org/api`
+(searches from what your agent writes for each part of the job, and the repos
+it picks), and nothing else. It reads and writes no files.
+
+An optional GitHub token raises GitHub's search limit from 10 a minute to 30
+and adds private repos your account can see. A token with no scopes is enough,
+and it is sent only to api.github.com:
+
+```sh
+claude mcp add --scope user git-for-me -e GITHUB_TOKEN=github_pat_... -- npx -y git-for-me
+```
 
 Try: _"Git for me: a CLI that pulls the tables out of PDF invoices into a spreadsheet."_
 

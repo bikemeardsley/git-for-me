@@ -18,33 +18,26 @@ connected, call `git_for_me` with the need and follow what it returns. It says
 what to ask the user first, what to search, and when to call
 `git_for_me_verify`.
 
-## Without them, from a shell
+## Without them
 
-The same three steps run from a shell. Node 22.18 or later is needed. Write the
-JSON to a file and pass it on stdin:
+This plugin runs nothing itself. If the tools aren't connected, don't run Git
+for Me! with `npx` or any other way, and don't stand in for it with repos you
+remember. Tell the user it needs its MCP server, added once with:
 
-1. `npx -y git-for-me rubric < details.json`, where
-   the file holds `{"need": "...", "stack": "...", "platform": "...", "license": "...", "upkeep": "..."}`.
-   Fill what the conversation or codebase already says and leave the rest
-   out. If it returns questions, ask the user, then run it again with the
-   answers ("unknown" is fine).
-2. Follow the method it returns. Where it says to call
-   `git_for_me_search`, write `{"parts": [...]}` to a file and run
-   `npx -y git-for-me search < parts.json`.
-3. Pick from what it found. Where the method says to call
-   `git_for_me_verify`, write that JSON to a file and run
-   `npx -y git-for-me verify < slate.json`.
-   If its JSON says `SEARCH_FIRST` or `RECALL_REPLACEMENTS`, do what its
-   instructions say and run it again.
+```sh
+claude mcp add --scope user git-for-me -- npx -y git-for-me
+```
 
-From a shell, a search GitHub turns away for its rate limit waits up to a
-minute for the limit to lift, so give these commands two minutes. The MCP
-server does the same steps with no shell commands to approve; if the user
-asks, its setup for each agent is in
-[USAGE.md](https://github.com/bikemeardsley/git-for-me/blob/main/USAGE.md).
+then a restart of Claude Code (or `/mcp`). Other clients and the token are in
+[USAGE.md](https://github.com/bikemeardsley/git-for-me/blob/main/USAGE.md). If
+the user wants an answer before that, say plainly that any repo you name is
+from memory and unchecked.
+
+## The report
 
 Show the user the markdown report as it comes back, without restating its
-facts from memory. Keep each repo's link, even if you shorten the report. Public repos need no token, but GitHub allows only 10
-searches a minute without one; a `GITHUB_TOKEN` in the server's own
-configuration, or in the environment the shell commands run in, raises that to 30 and adds private GitHub repos it can see.
-GitLab and Codeberg need none. Never ask for a token in the chat.
+facts from memory. Keep each repo's link, even if you shorten the report.
+Public repos need no token, but GitHub allows only 10 searches a minute without
+one; a `GITHUB_TOKEN` in the server's own configuration raises that to 30 and
+adds private GitHub repos it can see. GitLab and Codeberg need none. Never ask
+for a token in the chat.

@@ -69,15 +69,21 @@ test('runs the same three steps from a shell, for an agent without MCP', () => {
     /git-for-me search: the JSON on stdin doesn't fit\.\n.*parts/s.test(error.stderr) && !/server\.ts/.test(error.stderr));
 });
 
-test("the plugins' copies of the skill are the skill", () => {
-  const read = (path: string) => readFileSync(fileURLToPath(new URL(path, import.meta.url)), 'utf8');
+const read = (path: string) => readFileSync(fileURLToPath(new URL(path, import.meta.url)), 'utf8');
+
+test("the plugin's copy of the skill is the skill", () => {
   assert.equal(read('../plugin/skills/git-for-me/SKILL.md'), read('../skills/git-for-me/SKILL.md'));
-  assert.equal(read('../skill-plugin/skills/git-for-me/SKILL.md'), read('../skills/git-for-me/SKILL.md'));
 });
 
-test("the directory's plugin is the skill alone: no server, no settings, no install", () => {
-  const manifest = JSON.parse(readFileSync(fileURLToPath(new URL('../skill-plugin/.claude-plugin/plugin.json', import.meta.url)), 'utf8'));
+test("the directory's plugin is a skill that runs nothing: no server, no settings, no install, no npx", () => {
+  const manifest = JSON.parse(read('../skill-plugin/.claude-plugin/plugin.json'));
   assert.equal(manifest.mcpServers, undefined);
   assert.equal(manifest.userConfig, undefined);
   assert.ok(!existsSync(fileURLToPath(new URL('../skill-plugin/package.json', import.meta.url))));
+  const skill = read('../skill-plugin/skills/git-for-me/SKILL.md');
+  const frontmatter = (text: string) => text.split('\n---\n')[0];
+  assert.equal(frontmatter(skill), frontmatter(read('../skills/git-for-me/SKILL.md')));
+  assert.match(skill, /don't run Git\s+for Me! with `npx` or any other way/);
+  assert.match(skill, /claude mcp add --scope user git-for-me -- npx -y git-for-me/);
+  assert.doesNotMatch(skill, /git-for-me (rubric|search|verify)/);
 });
