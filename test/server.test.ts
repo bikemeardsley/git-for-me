@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFileSync, spawn } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
@@ -69,7 +69,15 @@ test('runs the same three steps from a shell, for an agent without MCP', () => {
     /git-for-me search: the JSON on stdin doesn't fit\.\n.*parts/s.test(error.stderr) && !/server\.ts/.test(error.stderr));
 });
 
-test("the plugin's copy of the skill is the skill", () => {
+test("the plugins' copies of the skill are the skill", () => {
   const read = (path: string) => readFileSync(fileURLToPath(new URL(path, import.meta.url)), 'utf8');
   assert.equal(read('../plugin/skills/git-for-me/SKILL.md'), read('../skills/git-for-me/SKILL.md'));
+  assert.equal(read('../skill-plugin/skills/git-for-me/SKILL.md'), read('../skills/git-for-me/SKILL.md'));
+});
+
+test("the directory's plugin is the skill alone: no server, no settings, no install", () => {
+  const manifest = JSON.parse(readFileSync(fileURLToPath(new URL('../skill-plugin/.claude-plugin/plugin.json', import.meta.url)), 'utf8'));
+  assert.equal(manifest.mcpServers, undefined);
+  assert.equal(manifest.userConfig, undefined);
+  assert.ok(!existsSync(fileURLToPath(new URL('../skill-plugin/package.json', import.meta.url))));
 });

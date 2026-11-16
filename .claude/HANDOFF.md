@@ -150,7 +150,11 @@ npm's and the MCP Registry's logins both expire, so each release starts with
 
 **Submitted, pending review:**
 
-- the Claude plugin directory (Mike);
+- the Claude plugin directory (Mike). 0.1.4 was refused on 2026-11-16 (local
+  MCP server, package.json with a lockfile, unknown fields: Verified
+  organizations only). The skills-only `skill-plugin/` is for a new
+  submission (plugin path `skill-plugin`, branch main) in place of the old
+  one at `plugin`, which Mike withdraws;
 - awesome-copilot [#5089](https://github.com/github/awesome-copilot/issues/5089):
   intake passed (all gates), labeled `ready-for-review`. Filed with `gh`,
   whose labels a non-maintainer can't set, so intake skipped it until the

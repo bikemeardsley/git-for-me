@@ -36,7 +36,7 @@ jobs:
           version="$(node -p 'require("./package.json").version')"
           test "$GITHUB_REF_NAME" = "v$version" || { echo "tag $GITHUB_REF_NAME is not v$version (package.json)"; exit 1; }
           # plugin/package.json is left out: it's bumped after the package is on npm
-          stale="$(grep -LF "$version" src/server.ts server.json plugin/.claude-plugin/plugin.json plugin/plugin.json plugin/mcp.json plugin/mcp_config.json gemini-extension.json)" || true
+          stale="$(grep -LF "$version" src/server.ts server.json plugin/.claude-plugin/plugin.json skill-plugin/.claude-plugin/plugin.json plugin/plugin.json plugin/mcp.json plugin/mcp_config.json gemini-extension.json)" || true
           test -z "$stale" || { echo "not at $version: $stale"; exit 1; }
           git merge-base --is-ancestor "$GITHUB_SHA" origin/main || { echo "$GITHUB_SHA is not in main"; exit 1; }
       - run: npm ci

@@ -40,14 +40,24 @@ decisions made, the open questions, and the launch plan. Then
   skill's shell fallback all run. It's written in
   `plugin/.claude-plugin/plugin.json`, `plugin/mcp.json` (Agent Plugins, for
   Copilot; beside it `plugin/plugin.json`), `gemini-extension.json`,
-  `skills/git-for-me/SKILL.md` (copied to `plugin/skills/`, a test keeps them
-  equal), USAGE.md, llms-install.md and the README: change one, change them
-  all. The manifests pin the version (`git-for-me@0.1.1`), as Claude's plugin
-  directory requires; the README and skill don't. No Cursor plugin (Mike
-  passed on Cursor's marketplace for WMH).
+  `skills/git-for-me/SKILL.md` (copied to `plugin/skills/` and
+  `skill-plugin/skills/`, a test keeps them equal), USAGE.md, llms-install.md
+  and the README: change one, change them all. The manifests in `plugin/` pin
+  the version (`git-for-me@0.1.1`); the README and skill don't. No Cursor
+  plugin (Mike passed on Cursor's marketplace for WMH).
+- **Claude's plugin directory gets the skill alone** (`skill-plugin/`,
+  decided 2026-11-16, the same as thicken and WMH). The directory refused
+  0.1.4: from an organization it hasn't Verified (no way to apply), it takes
+  no local MCP server, no `package.json` with a lockfile, and no field Claude
+  Code doesn't read. It reads the plugin path its submission names (changed
+  only by a new submission), so `skill-plugin/` is submitted on its own, with
+  no `mcpServers`, `userConfig` or `package.json` (a test checks), and the
+  skill runs from a shell there. `.claude-plugin/marketplace.json` stays on
+  `plugin/`, so whoever adds the marketplace keeps the tools. Never add a
+  server or a package install to `skill-plugin/`.
 - **A release** bumps the version in `package.json`, `src/server.ts`,
   `server.json` (twice), `plugin/.claude-plugin/plugin.json` (`version` and
-  the pin), `plugin/plugin.json`, `plugin/mcp.json` (the pin),
+  the pin), `skill-plugin/.claude-plugin/plugin.json`, `plugin/plugin.json`, `plugin/mcp.json` (the pin),
   `plugin/mcp_config.json` (the same servers, for Antigravity),
   `gemini-extension.json` and `plugin/package.json` (then
   `npm install --package-lock-only --ignore-scripts` in `plugin/` once the new

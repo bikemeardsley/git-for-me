@@ -38,10 +38,13 @@ JSON to a file and pass it on stdin:
    instructions say and run it again.
 
 From a shell, a search GitHub turns away for its rate limit waits up to a
-minute for the limit to lift, so give these commands two minutes.
+minute for the limit to lift, so give these commands two minutes. The MCP
+server does the same steps with no shell commands to approve; if the user
+asks, its setup for each agent is in
+[USAGE.md](https://github.com/bikemeardsley/git-for-me/blob/main/USAGE.md).
 
 Show the user the markdown report as it comes back, without restating its
 facts from memory. Keep each repo's link, even if you shorten the report. Public repos need no token, but GitHub allows only 10
 searches a minute without one; a `GITHUB_TOKEN` in the server's own
-configuration raises that to 30 and adds private GitHub repos it can see.
+configuration, or in the environment the shell commands run in, raises that to 30 and adds private GitHub repos it can see.
 GitLab and Codeberg need none. Never ask for a token in the chat.
